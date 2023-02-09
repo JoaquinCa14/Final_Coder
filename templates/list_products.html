@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Listado de productos
+{% endblock %}
+
+{% block content %}
+
+    <center><h1>Lista de productos</h1></center>
+    <br>
+    <br>
+    <center><h2>Crear nuevo producto</h2></center> <center><a href="/products/create-product/" class="btn btn-primary">Crear</a></center>
+
+    {% for product in products %}
+    <br>
+    <center><div class="card" style="width: 18rem;">
+        <img src="https://images.emojiterra.com/google/android-11/512px/2705.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">El precio es: {{product.price}}</p>
+        {% if product.stock == True %}
+        <p>Actualmente hay stock</p>
+        {% else %}
+            <p>Actualmente, nos quedamos sin stock</p>
+        {% endif %}
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+      </div>
+      </center
+
+        
+
+    {% endfor %}
+
+
+{% endblock %}

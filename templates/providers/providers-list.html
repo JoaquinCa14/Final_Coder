@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Listado de productos
+{% endblock %}
+
+{% block content %}
+
+   
+    <h1>Proveedores</h1>
+    <h2>Crear un nuevo prestador</h2> <a href="/providers/providers-create/" class="btn btn-primary">Crear</a>
+    {% for provider in providers %}
+
+    <div class="card" style="width: 18rem;">
+        <img src="https://www.speedagro.com.ar/uploads/productos/352065d7ec78d5e8f685fad1fdeec893.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{provider.name}}</h5>
+        <p class="card-text">Direccion: {{provider.address}}</p>
+        <p>Telefono: {{provider.phone_number}}</p>
+        <a href="#" class="btn btn-primary">Detalle</a>
+        </div>
+      </div>
+
+        
+
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+    <br>
+    <center><h1>Actualizar producto</h1></center>
+    <br>
+    <br>
+
+    {% if form %}
+
+        <center><form action="" method="POST">
+
+            {% csrf_token %}
+
+            <table>
+                {{form.as_table}} 
+            </table>
+        
+        
+            <input type="submit" value="Crear producto">
+        </form>
+        </center>
+   
+    {% endif %}
+    
+    {% if form_errors %}
+        {{form_errors}}
+
+    {% endif %}
+
+    {% if message %}
+        <center><h2 style="color: green;">{{message}}</h2></center>
+    {% endif %}
+
+{% endblock %}
+
+{% block title %}
+    Actualizacion
+{% endblock %}
